@@ -1,0 +1,122 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-csp="" ng-app="renren"> <!--<![endif]-->
+
+	<head>
+
+		<base href="/">
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>人人电影 </title>
+		<meta name="description" content="Simple AngularJS Boilerplate to kick start your new project with SASS support and Gulp watch/build tasks">
+
+		<!-- mobile meta -->
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+
+		<!--[if IE]>
+			<link rel="shortcut icon" href="favicon.ico">
+		<![endif]-->
+		<!-- or, set /favicon.ico for IE10 win -->
+		<meta name="msapplication-TileColor" content="#f01d4f">
+
+		<!-- CSS -->
+		<!-- build:css css/style.min.css -->
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="styles/dashboard.css">
+		<link rel="stylesheet" type="text/css" href="styles/style.css" />
+		<!-- endbuild -->
+
+	</head>
+
+	<body class="main-wrapper">
+	
+		<!--[if lt IE 8]>
+		    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+
+		<!-- Navigation -->
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	      <div class="container-fluid">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	            <span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	          <a class="navbar-brand" href="#">豆瓣电影乐园</a>
+	        </div>
+	        <div id="navbar" class="navbar-collapse collapse">
+	          <ul class="nav navbar-nav navbar-right">
+	            <li><a href="#">Dashboard</a></li>
+	            <li><a href="#">Settings</a></li>
+	            <li><a href="#">Profile</a></li>
+	            <li><a href="#">Help</a></li>
+	          </ul>
+	          <form class="navbar-form navbar-right">
+	            <input type="text" class="form-control" placeholder="Search...">
+	          </form>
+	        </div>
+	      </div>
+	    </nav>
+
+	    <div class="container-fluid">
+	      <div class="row">
+	        <div class="col-sm-3 col-md-2 sidebar">
+	          <ul class="nav nav-sidebar">
+	            <li class="active"><a href="#/in_theathers">正在热映</a></li>
+	            <li><a href="#/coming_soon">即将上映</a></li>
+	            <li><a href="#/top250">Top205</a></li>
+	          </ul>
+	        </div>
+	        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+				<div ng-view></div>
+	        </div>
+	      </div>
+	    </div>
+
+	</body>
+
+	<!-- Vendors -->
+	<!-- build:nonangularlibs js/nonangularlibs.js -->
+	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+	<!-- endbuild -->
+
+	<!-- Non-angular libraries -->
+	<!-- build:libs js/libs.js -->
+
+	<!-- endbuild -->
+
+	<!-- Angular external libraries for application -->
+	<!-- build:angularlibs js/angularlibs.js -->
+	<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+	<script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+	<script type="text/javascript" src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+	<!-- endbuild -->
+
+	<!-- Angular components -->
+	<!-- build:appcomponents js/appcomponents.js -->
+	<script type="text/javascript" src="app/app.js"></script>
+	<script type="text/javascript" src="app/config.js"></script>
+	<!-- endbuild -->
+
+	<!-- Application sections -->
+	<!-- build:mainapp js/mainapp.js -->
+
+	<script type="text/javascript" src="views/in_theathers/controller.js"></script>
+	<script type="text/javascript" src="views/coming_soon/controller.js"></script>
+	<script type="text/javascript" src="views/top250/controller.js"></script>
+	<!-- endbuild -->
+
+	<!-- templates from $templateCache -->
+	<!-- build:templates -->
+	<!-- endbuild -->
+	
+	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+
+</html>
