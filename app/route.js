@@ -2,7 +2,7 @@
 * @Author: 虚竹
 * @Date:   2016-09-29 09:29:36
 * @Last Modified by:   虚竹
-* @Last Modified time: 2016-09-29 11:17:20
+* @Last Modified time: 2016-09-30 10:51:22
 */
 
 ;(function(angular) {
@@ -18,6 +18,12 @@
 		}).when('/top', {
 			templateUrl: '../views/top/view.html',
 			controller: 'topController'
+		}).when('/search/:text', {
+			templateUrl: '../views/search/view.html',
+			controller: 'searchController'
+		}).when('/subject/:id', {
+			templateUrl: '../views/detail/view.html',
+			controller: 'detailController'
 		}).otherwise({
 			redirectTo: '/hot'
 		});
