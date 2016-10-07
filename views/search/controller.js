@@ -2,14 +2,24 @@
  * @Author: 虚竹
  * @Date:   2016-09-29 09:29:36
  * @Last Modified by:   虚竹
- * @Last Modified time: 2016-09-30 10:30:37
+ * @Last Modified time: 2016-10-07 13:37:27
  */
 
-;
-(function(angular) {
-    'use strict';
-    var app = angular.module("renren");
-    app.controller('searchController', ['$scope', '$routeParams', 'httpService',  function($scope, $routeParams, httpService) {
+'use strict';
+define([
+    'angular', 
+    'angularRoute',
+    'components/directive/autoFocus.js',
+    'components/service/httpService.js'
+    ], function() {
+    var app = angular.module("renren.search", ['ngRoute', 'renren.directive', 'renren.http']);
+    app.config(['$routeProvider', function($routeProvider) {
+        $routeProvider.when('/search/:text', {
+            templateUrl: '/views/search/view.html',
+            controller: 'searchController'
+        })
+    }]);
+    app.controller('searchController', ['$scope', '$routeParams', 'httpService', function($scope, $routeParams, httpService) {
         console.log("1s sddf");
         var pageSize = 10;
         var page = 1;
@@ -56,13 +66,5 @@
             }
         };
 
-        // 接受广播数据
-        // $scope.$on('dataListMf', function(event, data) {
-        //     console.log(data);
-        //     $scope.dataList = data;
-        //     $scope.totalPage = Math.ceil(data.total/pageSize);
-        //     $scope.$apply();
-        // });
-
     }]);
-})(angular);
+});

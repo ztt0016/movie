@@ -2,13 +2,13 @@
 * @Author: 虚竹
 * @Date:   2016-09-29 14:41:03
 * @Last Modified by:   虚竹
-* @Last Modified time: 2016-09-29 15:58:21
+* @Last Modified time: 2016-10-07 13:12:27
 */
 
-(function(angular) {
-    'use strict';
-    var app = angular.module("renren");
-    app.service('httpService', [function() {
+'use strict';
+define(['angular'], function() {
+	var service = angular.module("renren.http", []);
+	service.service('httpService', [function() {
         this.jsonp = function(url, data, fn) {
 			function getData(data) {
 				fn(data);
@@ -39,4 +39,6 @@
 			document.body.appendChild(script);
 		}
     }]);
-})(angular);
+
+    return service;
+});

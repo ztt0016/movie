@@ -2,13 +2,23 @@
  * @Author: 虚竹
  * @Date:   2016-09-29 09:29:36
  * @Last Modified by:   虚竹
- * @Last Modified time: 2016-09-30 10:47:07
+ * @Last Modified time: 2016-10-07 13:36:34
  */
 
-;
-(function(angular) {
-    'use strict';
-    var app = angular.module("renren");
+'use strict';
+define([
+    'angular', 
+    'angularRoute',
+    'components/directive/autoFocus.js',
+    'components/service/httpService.js'
+    ], function() {
+    var app = angular.module("renren.hot", ['ngRoute', 'renren.directive', 'renren.http']);
+    app.config(['$routeProvider', function($routeProvider) {
+        $routeProvider.when('/hot', {
+            templateUrl: '/views/hot/view.html',
+            controller: 'hotController'
+        })
+    }]);
     app.controller('hotController', ['$scope', 'httpService', function($scope, httpService) {
         var pageSize = 10;
         var page = 1;
@@ -53,19 +63,5 @@
                 $scope.currentPage--;
             }
         };
-
-        // 接受广播数据
-        // $scope.$on('dataListMf', function(event, data) {
-        //     console.log(data);
-        //     $scope.dataList = data;
-        //     $scope.totalPage = Math.ceil(data.total/pageSize);
-        //     $scope.$apply();
-        // });
-
-
-        // 查看详情功能怎么实现
-        // 1. 查看API，豆瓣请求的
-        // 2. http://api.douban.com/v2/movie/subject/1764796
-
     }]);
-})(angular);
+});
